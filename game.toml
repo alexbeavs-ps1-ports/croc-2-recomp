@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Croc 2"
+id = "SLUS-00634"
+players = 1
+exe = "disc/SLUS_006.34"
+disc = "disc/Croc 2 (USA).cue"
+discs = ["disc/Croc 2 (USA).cue"]
+disc_serials = ["SLUS-00634"]
+load_address = "0x80100000"
+entry_pc = "0x80106354"
+text_size = "0x00027800"
+stack_base = "0x801FFF00"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Croc 2 (USA).bin"
+cue_name = "Croc 2 (USA).cue"
+boot_exe = "SLUS_006.34"
+known_sizes = [694472688]
+known_md5 = [
+  "f7c26ff77d81fbde3bd20a3a55b413e4",
+]
+known_sha1 = [
+  "fee4318d38801d0eac6e32c951238be81ec1c70c",
+]
+known_crc32 = [
+  "0b9ee3bf",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Croc 2 Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "0c017c1c5ec4345ecefc0aa448206146e9575e97f73a8a50a17951c8b41abfda"

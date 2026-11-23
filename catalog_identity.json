@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Croc 2",
+    "id": "SLUS-00634",
+    "boot_exe": "SLUS_006.34"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Croc 2 (USA).cue",
+    "bin_name": "Croc 2 (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 694472688,
+      "md5": "f7c26ff77d81fbde3bd20a3a55b413e4",
+      "sha1": "fee4318d38801d0eac6e32c951238be81ec1c70c",
+      "crc32": "0b9ee3bf"
+    },
+    "disc_fp": "0c017c1c5ec4345ecefc0aa448206146e9575e97f73a8a50a17951c8b41abfda"
+  },
+  "exe": {
+    "load_address": "0x80100000",
+    "entry_pc": "0x80106354",
+    "text_size": "0x00027800",
+    "stack_base": "0x801FFF00"
+  },
+  "seeds": {
+    "count": 370,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
